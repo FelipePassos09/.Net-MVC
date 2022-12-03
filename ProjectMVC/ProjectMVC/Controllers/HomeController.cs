@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ProjectMVC.Models;
+using ProjectMVC.Models.ViewModels;
 
 namespace ProjectMVC.Controllers;
 
@@ -15,11 +16,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewData["Created"] = "Created by Felipe";
+        
         return View();
     }
 
     public IActionResult Privacy()
     {
+        ViewData["Created"] = "Created by Felipe Passos";
+        
         return View();
     }
 
