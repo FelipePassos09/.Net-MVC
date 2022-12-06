@@ -8,11 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
+// Add database connection.
 var MySqlConnection = builder.Configuration.GetConnectionString("ProjectMVC");
 
 builder.Services.AddDbContextPool<ProjectMVCContext>(options =>
     options.UseMySql(MySqlConnection,ServerVersion.AutoDetect(MySqlConnection)));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
